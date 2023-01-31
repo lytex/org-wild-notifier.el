@@ -113,6 +113,12 @@ Leave this variable blank if you do not want to filter anything."
   :group 'org-wild-notifier
   :type '(repeat string))
 
+(defcustom org-wild-notifier-inherit-tags nil
+  "Receive notifications from this timestamp entries"
+  :package-version '(org-wild-notifier . "0.3.1")
+  :group 'org-wild-notifier
+  :type 'boolean)
+
 (defcustom org-wild-notifier--alert-severity 'medium
   "Severity of the alert.
 options: 'high 'medium 'low"
@@ -210,7 +216,7 @@ Returns a list of notification messages"
 
 (defun org-wild-notifier--get-tags (marker)
   "Retrieve tags of MARKER."
-  (-> (org-entry-get marker "TAGS")
+  (-> (if org-wild-notifier-inherit-tags (org-get-tags-at marker) (org-entry-get marker "TAGS"))
       (or "")
       (org-split-string  ":")))
 

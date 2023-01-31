@@ -31,6 +31,7 @@ Oh, yes. This package provides some configuration options:
 | Org keyword based blacklist. You'll /never/ be notified about events specified by this variable   | org-wild-notifier-keyword-blacklist    | nil                                   |
 | Org tags based whitelist. You'll get notified /only/ about events specified by this variable      | org-wild-notifier-tags-whitelist       | nil                                   |
 | Org tags based blacklist. You'll /never/ be notified about events specified by this variable      | org-wild-notifier-tags-blacklist       | nil                                   |
+| Whether tag inheritance is considered when getting tags for whitelist/blacklist                   | org-wild-notifier-inherit-tags         | nil
 | Org timestamp based whitelist. You'll get notified /only/ about events specified by this variable | org-wild-notifier-entries              | '("DEADLINE" "SCHEDULED" "TIMESTAMP") |
 | Property which adds additional notifications                                                      | org-wild-notifier-alert-times-property | WILD_NOTIFIER_NOTIFY_BEFORE           |
 
